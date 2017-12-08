@@ -1,0 +1,25 @@
+{
+  "name": "iris-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "1.18.2",
+    "connect-flash": "*",
+    "cookie-parser": "^1.4.3",
+    "express": "^4.16.2",
+    "express-messages": "*",
+    "express-session": "^1.15.6",
+    "express-validator": "*",
+    "mongoose": "^4.13.3",
+    "passport": "^0.4.0",
+    "passport-http": "*",
+    "passport-local": "*"
+  },
+  "author": "Bitwise Industries",
+  "license": "ISC"
+}

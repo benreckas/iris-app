@@ -1,0 +1,89 @@
+<body>
+  <div class="container-fluid text-center">
+    <div class="container text-center">
+      <img class="login-img" src="../../assets/img/logo_white_text.png">
+    </div>
+    <form (submit)="onRegisterSubmit()">   
+      <div class="form-group text-center">
+         <input type="text" [(ngModel)]="firstname" name="firstname" class="form-control" placeholder="First Name">
+      </div>
+      <div class="form-group text-center">
+        <input type="text" [(ngModel)]="lastname" name="lastname" class="form-control" placeholder="Last Name">
+      </div>
+      <div class="form-group text-center">
+        <input type="text" [(ngModel)]="email" name="email" class="form-control" placeholder="email">
+      </div>
+      <div class="form-group text-center">
+        <input type="text" [(ngModel)]="createUsername" name="createUsername" class="form-control" placeholder="Create Username">
+      </div>
+      <div class="form-group text-center">
+        <input type="text" [(ngModel)]="createPassword" name="createPassword" class="form-control" placeholder="Create Password">
+      </div>
+      <div class="form-group text-center">
+        <input type="user" [(ngModel)]="userType" name="userType" class="form-control" placeholder="User Type (Student, Parent, Teacher)">
+      </div>
+      <div class="row checkbox">
+          <div class="col-sm-12">
+            <input type="checkbox"> I Am Not a Robot <br>
+          </div>  
+        </div>
+      <div class="btn-label text-center">
+        <input type="submit" class="btn btn-primary btn-light" value="Register">
+      </div>
+    </form>
+  </div>
+</body>   
+     <!-- <div class="row text-center">
+        <div class="col-sm-6">
+          <input type="firstName" class="form-control input-form" id="#" placeholder="First Name">
+        </div>
+        <div class="col-sm-6">
+          <input type="lastName" class="form-control input-form" id="#" placeholder="Last Name">
+        </div>
+      </div>
+      <div class="row text-center">
+        <div class="col-sm-12">
+          <input type="email" class="form-control input-form" id="#" placeholder="Email">
+        </div>
+      </div>
+      <div class="row text-center">
+        <div class="col-sm-12">
+          <input type="phoneNumber" class="form-control input-form" id="#" placeholder="Phone Number (Optional)">
+        </div>
+      </div>
+      <div class="row text-center">
+        <div class="col-sm-12">
+          <input type="createUsername" class="form-control input-form" id="#" placeholder="Create Username">
+        </div>
+      </div>
+      <div class="row text-center">
+        <div class="col-sm-12">
+          <input type="confirmUsername" class="form-control input-form" id="#" placeholder="Confirm Username">
+        </div>  
+      </div>
+      <div class="row text-center">
+        <div class="col-sm-12">
+          <input type="createPassword" class="form-control input-form" id="#" placeholder="Create Password">
+        </div>
+      </div>
+      <!--<div class="row text-center">
+        <div class="col-sm-12">
+          <input type="confirmPassword" class="form-control input-form" id="#" placeholder="Confirm Password">
+        </div>
+      </div>
+      <div class="row text-center">
+          <div class="col-sm-12">
+            <input type="userType" class="form-control input-form" id="#" placeholder="User Type (Student, Parent, Teacher)">
+          </div>
+        </div>
+      <div class="row checkbox">
+        <div class="col-sm-12">
+          <input type="checkbox"> I Am Not a Robot <br>
+        </div>  
+      </div>
+      <div class="row text-center">
+        <input type="submit" class="btn btn-light btn-lg login-btn text-center" value="Submit">            
+      </div>
+    </form>
+  </div>   
+</body>-->
