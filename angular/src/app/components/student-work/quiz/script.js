@@ -15,27 +15,30 @@ function init() {
     containment: 'window',
  });
  $('#one').droppable( {
-    drop: showAmountOne
+    drop: addAmountOne,
+    out: subAmountOne
   });
   $('#two').droppable( {
-    drop: showAmountTwo
+    drop: addAmountTwo,
+    out: subAmountTwo
   });
 }
 
-function dropEvent( event, ui ) {
-    var draggable = ui.draggable;
-    console.log('dropped');
-  }
-
-function showAmountOne (event, ui){
+function addAmountOne (event, ui){
     amount1++;
     firstContainer.innerHTML = `Angelina: ${amount1}`
-
 }
-function showAmountTwo (event, ui){
+function subAmountOne (event, ui){
+    amount1--;
+    firstContainer.innerHTML = `Angelina: ${amount1}`
+}
+function addAmountTwo (event, ui){
     amount2++;
     secondContainer.innerHTML = `Lacey: ${amount2}`
-
+}
+function subAmountTwo (event, ui){
+    amount2--;
+    secondContainer.innerHTML = `Lacey: ${amount2}`
 }
 
 
