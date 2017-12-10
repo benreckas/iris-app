@@ -5,3 +5,9 @@
     src: url("./assets/fonts/bg/Brandon_reg.otf") format("opentype");
     
 }
+
+body {
+    background-color: #69D3D6;    
+    margin: 0;
+    border: 0;
+}
