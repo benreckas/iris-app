@@ -1,35 +1,22 @@
-body {
-    background-color: #69D3D6;    
-    margin: 0;
-    border: 0;
-
-}
+/**Let use percentages instead of pixels. -Vincent**/
 
 /***Login Img***/
 .login-img {
     /* position: absolute; */
-    padding-top: 5px;
-    max-width: 20%;
-    max-height: 20%;
+    padding-top: 9%;
+    max-width: 25%;
+    max-height: 25%;
     height: auto;
     display: block;
     margin: 0 auto;
-    font-family: 'Brandon Grotesque';
 }
 /***End of login img***/
 
 
 /***Inside form-input***/
 .form-group {
-    max-width: 330px;
+    max-width: 25%;
     margin: 0 auto;
-    font-family: 'Brandon Grotesque';
-}
-
-.input-form {
-    margin-top: 5px;
-    margin-bottom: 5px;
-    padding: 5px;
     font-family: 'Brandon Grotesque';
 }
 

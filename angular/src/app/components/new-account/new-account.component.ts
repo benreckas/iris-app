@@ -11,13 +11,11 @@ import { Router } from '@angular/router';
   encapsulation: ViewEncapsulation.None
 })
 export class NewAccountComponent implements OnInit {
-  firstname: String;
-  lastname: String;
+  name: String;
   email: String;
-  createUsername: String;
-  createPassword: String;
-  userType: String;
-
+  username: String;
+  password: String;
+  usertype: String;
 
   constructor(private validateService: ValidateService, private flashMessage: FlashMessage, private authService: AuthService, private router: Router,) { }
 
@@ -26,12 +24,11 @@ export class NewAccountComponent implements OnInit {
 
   onRegisterSubmit(){
     const user = {
-      firstname: this.firstname,
-      lastname: this.lastname,
+      name: this.name,
       email: this.email,
-      username: this.createUsername,
-      password: this.createPassword,
-      userType: this.userType, 
+      username: this.username,
+      password: this.password,
+      usertype: this.usertype,
     }
 
     //Required Fields
@@ -54,7 +51,7 @@ export class NewAccountComponent implements OnInit {
 
       } else {
         this.flashMessage.info('Something went wrong', {cssClass: 'alert-danger', timeout: 3000}); 
-        this.router.navigate(['/register']); //navigate back to the new-account page//
+        this.router.navigate(['/new-account']); //navigate back to the new-account page//
         
        }
     })
