@@ -3,7 +3,9 @@ const app = express();
 const bodyParser= require('body-parser');
 const config = require('./config.js');
 const mongoose = require('mongoose');
+const cors = require('cors');
 
+app.use(cors());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 
@@ -16,6 +18,3 @@ require('./routes/routes')(app);
 app.listen(config.port, function() {
   console.log(`Iris app server listening on port ${config.port}...`)
 });
-
-
-
