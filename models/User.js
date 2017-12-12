@@ -3,45 +3,6 @@ const Schema = mongoose.Schema;
 const bcrypt = require('bcryptjs');
 
 const UserSchema = new Schema({
-  /*info:{
-      firstName: {type: String, required: true},
-      middleName: {type: String, required: false},
-      lastName: {type: String, required: true},
-      address: {type:String, required: true},
-      phone: {type: Number, required:true},
-      photo: {type: String, required: true}
-  },
-
-  login:{
-    email: {
-      type: String,
-      required: true,
-      validator:{}
-    },
-    password:{
-      type: String,
-      required: true,
-      validator:{
-
-      }
-    }
-  },
-
-  permissions:{
-    role: String,
-    validator:{}
-  },
-
-  school:{
-    district: String,
-    city: String,
-    state: String,
-    schoolName: String,
-    validator:{}
-  }
-});*/
-
-
   name: {
       type: String
   },
@@ -80,6 +41,4 @@ UserSchema.pre('save', function(next){
    }
 });
 
-const User = mongoose.model('User', UserSchema);
-
-module.exports = User;
+const User = module.exports = mongoose.model('User', UserSchema);
