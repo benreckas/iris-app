@@ -2,6 +2,8 @@
 // ---------------------User ROUTES ------------------------//
 
 const userController = require('../controllers/userController');
+const passport = require('passport');
+const LocalStrategy = require('passport-local').Strategy;
 
 module.exports = function(app) {
 
@@ -25,7 +27,7 @@ module.exports = function(app) {
     });
 
     //Login a User
-    app.post('/users/:id/login/', function(req, res){
+    app.post('/users/authenticate', function(req, res){
        userController.login(req, function(err, data){
             if(err){
                 res.send(err);
@@ -35,6 +37,12 @@ module.exports = function(app) {
             res.send(data);
         });
     });
+
+    app.post('/login',
+      passport.authenticate('local', { failureRedirect: '/login' }),
+      function(req, res) {
+        res.redirect('/');
+      });
 
     //Update User
     app.post('/users/:id/update/', userController.update);

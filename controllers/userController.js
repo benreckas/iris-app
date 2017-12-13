@@ -21,7 +21,9 @@ exports.register = function(req, callback) {
 
 // Login a User
 exports.login = function(req, res) {
-
+  var loginData = req.body;
+  if(User.getUserByUsername(loginData.username)){
+  }
 };
 
 
@@ -44,4 +46,9 @@ exports.details = function(req, res) {
 // Display list of all Users
 exports.all_details = function(req, res) {
 
+};
+
+//Get user by Id
+module.exports.getUserById = function (id, callback){
+  User.findById(id, callback);
 };

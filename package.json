@@ -4,7 +4,7 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "NODE_ENV=test nodemon --exec 'mocha --recursive -R min'"
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",
@@ -16,6 +16,7 @@
     "express-messages": "^1.0.1",
     "express-session": "^1.15.6",
     "express-validator": "^4.3.0",
+    "mocha": "^4.0.1",
     "mongoose": "^4.13.3",
     "passport": "^0.4.0",
     "passport-http": "^0.3.0",
