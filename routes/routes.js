@@ -25,7 +25,7 @@ module.exports = function(app) {
     });
 
     //Login a User
-    app.post('/users/:id/login/', function(req, res){
+    app.post('/login', function(req, res){
        userController.login(req, function(err, data){
             if(err){
                 res.send(err);
