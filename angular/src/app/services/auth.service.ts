@@ -11,15 +11,15 @@ export class AuthService {
   constructor(private http:Http) { }
 
   registerUser(user){
-    let headers = new Headers ();
+    let headers = new Headers();
     headers.append('Content-Type', 'application/json');
-    return this.http.post('http://localhost:3000/new-account', user,{headers: headers}).map(res => res.json());
+    return this.http.post('http://localhost:3000/new-account', user, {headers: headers});//.map(res => res.json());
   }
 
   authenticateUser(user){
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
-    return this.http.post('http://localhost:3000/users/authenticate', user, {headers: headers}).map(res => res.json());
+    return this.http.post('http://localhost:3000/login', user, {headers: headers});//.map(res => res.json());
   }
 
   getProfile(){
@@ -27,18 +27,18 @@ export class AuthService {
     this.loadToken();
     headers.append('Authorization', this.authToken);
     headers.append('Content-Type', 'application/json');
-    return this.http.get('http://localhost:3000/users/profile', {headers: headers}).map(res => res.json());
+    return this.http.get('http://localhost:3000/users/profile', {headers: headers});//.map(res => res.json());
 
   }
   storeUserData(token, user){
-    localStorage.setItem('id_token', token);
+    localStorage.setItem('_id', token);
     localStorage.setItem('user', JSON.stringify(user));
     this.authToken = token;
     this.user = user;
   }
 
   loadToken(){
-    const token = localStorage.getItem('id_token');
+    const token = localStorage.getItem('_id');
     this.authToken = token;
   }
 

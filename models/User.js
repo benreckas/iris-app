@@ -3,45 +3,6 @@ const Schema = mongoose.Schema;
 const bcrypt = require('bcryptjs');
 
 const UserSchema = new Schema({
-  /*info:{
-      firstName: {type: String, required: true},
-      middleName: {type: String, required: false},
-      lastName: {type: String, required: true},
-      address: {type:String, required: true},
-      phone: {type: Number, required:true},
-      photo: {type: String, required: true}
-  },
-
-  login:{
-    email: {
-      type: String,
-      required: true,
-      validator:{}
-    },
-    password:{
-      type: String,
-      required: true,
-      validator:{
-
-      }
-    }
-  },
-
-  permissions:{
-    role: String,
-    validator:{}
-  },
-
-  school:{
-    district: String,
-    city: String,
-    state: String,
-    schoolName: String,
-    validator:{}
-  }
-});*/
-
-
   name: {
       type: String
   },
@@ -68,18 +29,39 @@ const UserSchema = new Schema({
 
 UserSchema.pre('save', function(next){
   var user = this;
-  if(user.isModified('login.password')){
-      bcrypt.genSalt(10, (err, salt) => {
-          bcrypt.hash(user.login.password, salt, (err, hash) => {
-               user.login.password = hash;
-               next()
-           });
-       });
-   } else {
-       next()
-   }
+
+  if(User.findOne({username:user.username})) {
+      console.log('username has been found');
+    if(user.isModified('login.password')){
+        bcrypt.genSalt(10, (err, salt) => {
+            bcrypt.hash(user.password, salt, (err, hash) => {
+                 user.password = hash;
+                 next()
+             });
+         });
+     } else {
+         next()
+     }
+     console.log('username has not been found');
+  }
 });
 
 const User = mongoose.model('User', UserSchema);
 
 module.exports = User;
+
+module.exports.getUserById = function(id, callback){
+    User.findById(id, callback);
+}
+
+module.exports.getUserByUsername = function(username, callback) {
+    const query = {username: username}
+    User.findOne(query, callback);
+}
+
+module.exports.comparePassword = function(candidatePassword, hash, callback){
+    bcrypt.compare(candidatePassword, hash, (err, isMatch) => {
+        if(err) throw err;
+        callback(null, isMatch);
+    });
+}
