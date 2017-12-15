@@ -24,8 +24,8 @@ const appRoutes: Routes = [
   {path:'new-account', component:NewAccountComponent},
   {path:'login', component:LoginComponent},
   {path:'teacher-dash', component:TeacherDashComponent, canActivate:[AuthGuard]},
-  {path:'student-dash', component:StudentDashComponent, canActivate:[AuthGuard]},
-  {path:'parent-dash', component:ParentDashComponent},
+  {path: 'student-dash', component: StudentDashComponent, canActivate: [AuthGuard]},
+  {path: 'parent-dash', component:ParentDashComponent, canActivate:[AuthGuard]},
   {path:'student-work', component:StudentWorkComponent, canActivate:[AuthGuard]},
   //{path:'navbar', component:NavbarComponent},
   //{path:'user-details/:id', component:UserDetailsComponent}  

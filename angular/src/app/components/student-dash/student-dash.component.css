@@ -1,8 +1,4 @@
 /*Universals*/
-
-
-
-
 /***Side Bar***/
 .row {
     /* display: -ms-flexbox; */
@@ -29,6 +25,11 @@
     border-right: 1px solid #eee;
     font-family: 'Brandon Grotesque';
     padding: 20px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+
+.panel-section {
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
 }
 
 
