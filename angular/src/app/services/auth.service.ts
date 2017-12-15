@@ -13,22 +13,29 @@ export class AuthService {
   registerUser(user){
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
-    return this.http.post('http://localhost:3000/new-account', user, {headers: headers});//.map(res => res.json());
+    return this.http.post('http://localhost:3000/new-account', user, {headers: headers}).map(res => res.json());
   }
 
   authenticateUser(user){
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
-    return this.http.post('http://localhost:3000/login', user, {headers: headers});//.map(res => res.json());
+    return this.http.post('http://localhost:3000/login', user, {headers: headers}).map(res => res.json());
   }
 
-  getProfile(){
+  getStudentDash(){
     let headers = new Headers();
     this.loadToken();
     headers.append('Authorization', this.authToken);
     headers.append('Content-Type', 'application/json');
-    return this.http.get('http://localhost:3000/users/profile', {headers: headers});//.map(res => res.json());
-
+    return this.http.get('http://localhost:3000/student-dash', {headers: headers}).map(res => res.json());
+  }
+    getStudentWork(){
+      let headers = new Headers();
+      this.loadToken();
+      headers.append('Authorization', this.authToken);
+      headers.append('Content-Type', 'application/json');
+      return this.http.get('http://localhost:3000/student-work', {headers: headers}).map(res => res.json());
+  
   }
   storeUserData(token, user){
     localStorage.setItem('_id', token);
