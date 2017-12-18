@@ -39,7 +39,7 @@ export class LoginComponent implements OnInit {
         
 
       } else {
-        this.flashMessage.info('Please Enter a Valid Login' {
+        this.flashMessage.info('Please Enter a Valid Login', {
           cssClass: 'alert-danger',
           timeout: 5000});
         this.router.navigate(['/login']);

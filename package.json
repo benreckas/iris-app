@@ -18,9 +18,12 @@
     "express-validator": "^4.3.0",
     "mongoose": "^4.13.3",
     "passport": "^0.4.0",
-    "passport-http": "^0.3.0",
-    "passport-local": "^1.0.0"
+    "jsonwebtoken": "*",
+    "passport-jwt" :"*"
   },
   "author": "Bitwise Industries",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "@angular/cli": "^1.5.5"
+  }
 }
