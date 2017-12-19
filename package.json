@@ -23,7 +23,7 @@
   },
   "author": "Bitwise Industries",
   "license": "ISC",
-  "devDependencies": {
+   "devDependencies": {
     "@angular/cli": "^1.5.5"
   }
 }

@@ -19,7 +19,6 @@ module.exports = function(app) {
                 res.send(err);
                 return;
             }
-
             res.send(data);
         });
     });
@@ -31,22 +30,56 @@ module.exports = function(app) {
                 res.send(err);
                 return;
             }
-
             res.send(data);
         });
     });
 
     //Update User
-    app.post('/users/:id/update/', userController.update);
+    //app.post('/users/:id/update/', userController.update);
+    app.post('/', function(req, res){
+       userController.update(req, function(err, data){
+            if(err){
+                res.send(err);
+                return;
+            }
+            res.send(data);
+        });
+    });
 
     //Delete User
-    app.delete('/users/:id/delete/', userController.delete);
+    //app.delete('/users/:id/delete/', userController.delete);
+    app.delete('/', function(req, res){
+       userController.delete(req, function(err, data){
+            if(err){
+                res.send(err);
+                return;
+            }
+            res.send(data);
+        });
+    });
 
     //User Details
-    app.get('/users/:id/', userController.details);
+    //app.get('/users/:id/', userController.details);
+    app.get('/', function(req, res){
+       userController.details(req, function(err, data){
+            if(err){
+                res.send(err);
+                return;
+            }
+            res.send(data);
+        });
+    });
 
     //All User Details
-    app.get('/users/', userController.all_details);
-
+    //app.get('/users/', userController.all_details);
+    app.get('/', function(req, res){
+       userController.all_details(req, function(err, data){
+            if(err){
+                res.send(err);
+                return;
+            }
+            res.send(data);
+        });
+    });
 
 };
