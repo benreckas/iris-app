@@ -54,11 +54,11 @@ const quizQuestions =[
     {
         question: "Angelina has 12 apples and Lacey has 7. Lacey gives 2 apples to Angelina. How many more apples does Angelina have than Lacey?",
         answers: {
-        a: "9",
-        b: "14",
-        c: "5"
+        A: "9",
+        B: "14",
+        C: "5"
         },
-        correctAnswer: "a",
+        correctAnswer: "A",
     }
 ];
 
