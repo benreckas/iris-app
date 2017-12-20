@@ -11,13 +11,11 @@ import { Router } from '@angular/router';
   encapsulation: ViewEncapsulation.None
 })
 export class NewAccountComponent implements OnInit {
-  firstname: String;
-  lastname: String;
+  name: String;
   email: String;
-  createUsername: String;
-  createPassword: String;
-  userType: String;
-
+  username: String;
+  password: String;
+  usertype: String;
 
   constructor(private validateService: ValidateService, private flashMessage: FlashMessage, private authService: AuthService, private router: Router,) { }
 
@@ -26,35 +24,35 @@ export class NewAccountComponent implements OnInit {
 
   onRegisterSubmit(){
     const user = {
-      firstname: this.firstname,
-      lastname: this.lastname,
+      name: this.name,
       email: this.email,
-      username: this.createUsername,
-      password: this.createPassword,
-      userType: this.userType, 
+      username: this.username,
+      password: this.password,
+      usertype: this.usertype,
     }
 
     //Required Fields
     if(!this.validateService.validateRegister(user)){
-      this.flashMessage.info('Please fill in all fields', {cssClass: 'alert-danger', timeout: 3000});
+      this.flashMessage.info('Please fill in all fields', {cssClass: 'alert-danger', timeout: 5000});
       return false;
     }
 
     //Validate Email
     if(!this.validateService.validateEmail(user.email)){
-      this.flashMessage.info('Please use a valid email', {cssClass: 'alert-danger', timeout: 3000});
+      this.flashMessage.info('Please use a valid email', {cssClass: 'alert-danger', timeout: 5000});
       return false;
     }
 
     //Register User
     this.authService.registerUser(user).subscribe(data => {
-      if (data.success){
-        this.flashMessage.info('You are now registered and can log in', {cssClass: 'alert-success', timeout: 3000});
+      console.log(data);
+      if(data){
+        this.flashMessage.info('You are now registered and can log in', {cssClass: 'alert-success', timeout: 5000});
         this.router.navigate(['/login']);
 
       } else {
-        this.flashMessage.info('Something went wrong', {cssClass: 'alert-danger', timeout: 3000}); 
-        this.router.navigate(['/register']); //navigate back to the new-account page//
+        this.flashMessage.info('Something went wrong', {cssClass: 'alert-danger', timeout: 5000}); 
+        this.router.navigate(['/new-account']); //navigate back to the new-account page//
         
        }
     })

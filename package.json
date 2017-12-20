@@ -9,17 +9,21 @@
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "body-parser": "1.18.2",
-    "connect-flash": "*",
+    "connect-flash": "^0.1.1",
     "cookie-parser": "^1.4.3",
+    "cors": "^2.8.4",
     "express": "^4.16.2",
-    "express-messages": "*",
+    "express-messages": "^1.0.1",
     "express-session": "^1.15.6",
-    "express-validator": "*",
+    "express-validator": "^4.3.0",
     "mongoose": "^4.13.3",
     "passport": "^0.4.0",
-    "passport-http": "*",
-    "passport-local": "*"
+    "jsonwebtoken": "*",
+    "passport-jwt": "*"
   },
   "author": "Bitwise Industries",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "@angular/cli": "^1.6.1"
+  }
 }
