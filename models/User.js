@@ -31,18 +31,12 @@ UserSchema.pre('save', function(next){
   var user = this;
 
   if(User.findOne({username:user.username})) {
-      console.log('username has been found');
-    if(user.isModified('login.password')){
-        bcrypt.genSalt(10, (err, salt) => {
-            bcrypt.hash(user.password, salt, (err, hash) => {
-                 user.password = hash;
-                 next()
-             });
-         });
-     } else {
-         next()
-     }
-     console.log('username has not been found');
+    bcrypt.genSalt(10, function(err, salt) {
+        bcrypt.hash(user.password, salt, function(err, hash) {
+            user.password = hash;
+            next();
+        });
+    });
   }
 });
 
