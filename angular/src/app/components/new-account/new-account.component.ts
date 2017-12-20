@@ -46,7 +46,7 @@ export class NewAccountComponent implements OnInit {
     //Register User
     this.authService.registerUser(user).subscribe(data => {
       console.log(data);
-      if(data.success){
+      if(data){
         this.flashMessage.info('You are now registered and can log in', {cssClass: 'alert-success', timeout: 5000});
         this.router.navigate(['/login']);
 

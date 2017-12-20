@@ -10,7 +10,8 @@ exports.register = function(req, callback) {
     if(registrationData !== undefined && registrationData !== null && Object.keys(registrationData).length > 0) {
         var user = new User(registrationData);
         user.save();
-        callback.call(false, 'Registration data for User has been successfully saved!')
+        callback.call(false, 'Registration data for User has been successfully saved!');
+        console.log("Checking Name");
 
     } else {
         callback.call('User was not registered!', false);

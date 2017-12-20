@@ -18,8 +18,8 @@ const appRoutes: Routes = [
   {path:'',  redirectTo: 'login', pathMatch: 'full'},
   {path:'new-account', component: NewAccountComponent},
   {path:'login', component: LoginComponent},
-  {path: 'student-dash', component: StudentDashComponent, canActivate: [AuthGuard]},
-  {path:'student-work', component: StudentWorkComponent, canActivate:[AuthGuard]}
+  {path: 'student-dash', component: StudentDashComponent},
+  {path:'student-work', component: StudentWorkComponent,}
 ]
 
 @NgModule({

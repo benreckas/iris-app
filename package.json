@@ -19,11 +19,11 @@
     "mongoose": "^4.13.3",
     "passport": "^0.4.0",
     "jsonwebtoken": "*",
-    "passport-jwt" :"*"
+    "passport-jwt": "*"
   },
   "author": "Bitwise Industries",
   "license": "ISC",
-   "devDependencies": {
-    "@angular/cli": "^1.5.5"
+  "devDependencies": {
+    "@angular/cli": "^1.6.1"
   }
 }
