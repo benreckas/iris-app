@@ -132,10 +132,10 @@ function showResults(){
 
       if(userAnswer===currentQuestion.correctAnswer){
           numCorrect++;
-          answerContainers[questionNumber].setAttribute("style", "color: lightgreen");
+          answerContainers[questionNumber].setAttribute("style", "color: #00C100");
       }
       else{
-          answerContainers[questionNumber].setAttribute("style", "color: red");
+          answerContainers[questionNumber].setAttribute("style", "color: #FF1200");
         }
         resultsContainer.innerHTML = `You got ${numCorrect} out of ${quizQuestions.length} questions correct.`;
   });
