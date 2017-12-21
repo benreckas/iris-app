@@ -31,17 +31,17 @@ export class LoginComponent implements OnInit {
     this.authService.authenticateUser(user).subscribe(data => {
       console.log(data);
       if(data){
-        this.authService.storeUserData(data, data);
+        this.authService.storeUserData(data, user);
         this.flashMessage.info('You are logged in', {
           cssClass: 'alert-success',
-          timeout: 5000});
+          timeout: 7000});
         this.router.navigate(['/student-dash']);
         
 
       } else {
         this.flashMessage.info('Please Enter a Valid Login', {
           cssClass: 'alert-danger',
-          timeout: 5000});
+          timeout: 7000});
         this.router.navigate(['/login']);
         
       }

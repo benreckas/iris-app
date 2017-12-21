@@ -15,11 +15,12 @@ import { AuthGuard } from './guards/auth.guard'
 
 
 const appRoutes: Routes = [
-  {path:'',  redirectTo: 'login', pathMatch: 'full'},
+  {path:'', redirectTo: 'home', pathMatch: 'full'},
+  {path:'home', component: LoginComponent},
   {path:'new-account', component: NewAccountComponent},
   {path:'login', component: LoginComponent},
   {path: 'student-dash', component: StudentDashComponent},
-  {path:'student-work', component: StudentWorkComponent,}
+  {path:'student-work', component: StudentWorkComponent}
 ]
 
 @NgModule({

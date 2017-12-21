@@ -23,7 +23,7 @@ export class StudentDashComponent implements OnInit {
     this.authService.logout();
     this.flashMessage.info('You are logged out', {
       cssClass:'alert-success',
-      timeout: 3000
+      timeout: 7000
     });
     this.router.navigate(['/login']);
     return false;
