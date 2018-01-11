@@ -5,8 +5,9 @@ const config = require('./config.js');
 const mongoose = require('mongoose');
 const cors = require('cors');
 const path = require('path');
-const passport = require('passport')
-
+const passport = require('passport');
+const PORT = process.env.PORT || 3000;
+const pg = require('pg');
 
 //Passport Middleware
 
@@ -31,9 +32,13 @@ app.get('/', (req, res) =>{
 });
 
 //Index Route
-app.listen(config.port, function() {
-  console.log(`Iris app server listening on port ${config.port}...`)
-});
+//app.listen(config.port, function() {
+  //console.log(`Iris app server listening on port ${config.port}...`)
+//});
+
+app.listen(PORT, () => console.log(`Listening on ${ PORT }`));
+
 
 //Set Static Folder
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'public')))
+
