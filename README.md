@@ -14,4 +14,4 @@ We are an educational app aimed at improving the litteracy level of elementary a
 
 4 - Parents and Teachers will be connected in communication, with a built-in chat component, to discuss the progress of the student. 
 
-If you'd like to join us in making this happen- please read more about contributing here.
+If you'd like to join us in making this happen- please read more about [contributing here](https://github.com/benreckas/iris-app/blob/master/contributing.md).
