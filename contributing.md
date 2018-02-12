@@ -14,13 +14,13 @@ To start making a contribution:
 1. `clone` your forked repository:
 
    ```shell
-   $ git clone https://github.com/<YOUR-USERNAME>/googleMaps-offline-navigator
+   $ git clone https://github.com/<YOUR-USERNAME>/iris-app
    ```
 
 1. Add a new remote that points to the original project so you can sync project changes with your local copy:
 
    ```shell
-   $ git remote add upstream https://github.com/TheDevPath/googleMaps-offline-navigator
+   $ git remote add upstream https://github.com/benreckas/iris-app
    ```
 
 1. Pull upstream changes into your local repositories `development` branch:
