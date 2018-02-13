@@ -1,32 +1,22 @@
   <div class="container-fluid">
     <div class="container">
       <img class="login-img" src="../../assets/img/logo_white_text.png">
-      <!--<form class="form-input" action=""> 
-        <div class="row">
-          <input type="userName" class="form-control input-form" id="#" placeholder="Username">
-        </div>
-        <div class="row">
-          <input type="userPassword" class="form-control input-form" id="#" placeholder="Password">
-        </div>
-        <div class="row">
-          <input type="submit" class="btn btn-light btn-lg login-btn text-center" value="Submit">          
-        </div>-->
-        
-
+      <!-- Login Form Start -->
       <form (submit)="onLoginSubmit()">
-        <div class="form-group text-center">
+        <div class="form-group">
+          <label>Username</label>
           <input type="text" class="form-control" [(ngModel)]="username" name="username" placeholder="Username">
+          <label>Password</label>
           <input type="password" class="form-control" [(ngModel)]="password" name="password" placeholder="Password">
-
         </div>
-        <!-- <div class="form-group text-center">
-        </div> -->
         <div class="btn-label text-center">
-          <input type="submit" class="btn btn-primary btn-light" value="Login">
+          <input type="submit" class="btn btn-primary btn-light text-uppercase" value="Login">
         </div>
         <div class="row text-center">
-          <a href="http://localhost:4200/new-account" id="#" class="create-acc">Create a New Account</a>          
+          <!-- This link should be updated before release -->
+          <a href="http://localhost:4200/new-account" id="#" class="create-acc">Create New Account</a>          
         </div>
       </form>
+      <!-- Login Form End -->
     </div>
   </div>

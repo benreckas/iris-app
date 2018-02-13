@@ -1,8 +1,5 @@
-/**Let use percentages instead of pixels. -Vincent**/
-
-/***Login Img***/
+/* Image Start */
 .login-img {
-    /* position: absolute; */
     padding-top: 5%;
     max-width: 20%;
     max-height: 20%;
@@ -11,23 +8,33 @@
     margin: 0 auto;
     font-family: 'Brandon Grotesque';
 }
-/***End of login img***/
+/* Image End */
 
+/* Login Form Start */
+.form-control {
+    margin: 0 auto 2% auto;
+}
 
-/***Inside form-input***/
 .form-group {
-    max-width: 400px;
-    margin: 0 auto;
+    max-width: 80%;
     font-family: 'Brandon Grotesque';
+    margin: 0 auto;
+}
+
+.form-group .text-center {
+    margin: 0;
+}
+
+label {
+    color: white;
+    margin: 0;
 }
 
 .btn-label {
-    margin: 2% auto;
     color: #69D3D6;
     text-decoration: none !important;
     font-family: 'Brandon Grotesque';
 }
-
 
 .create-acc {
     margin: 0 auto;
@@ -35,4 +42,9 @@
     text-decoration: none !important;
     font-family: 'Brandon Grotesque';
 }
-/***End of form-input--Complete**/
+
+input.btn {
+    margin: 2% 0;
+    cursor: pointer;
+}
+/* Login Form End */
